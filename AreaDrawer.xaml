@@ -14,10 +14,10 @@
     </UserControl.Resources>
     <Viewbox Stretch="{Binding Stretch}">
         <Viewbox.ContextMenu>
-            <ContextMenu Name="ContextMenu">
-                <MenuItem Command="{Binding AddAreaShapeCommand}" Header="Add an area" />
-                <MenuItem Command="{Binding FinishDrawingShapeCommand}" Header="Stop drawing an area" />
-                <MenuItem Command="{Binding DeleteAreaShapeCommand}" Header="Delete selected area" />
+            <ContextMenu Name="AreasContextMenu" x:FieldModifier="public">
+                <MenuItem Command="{Binding AddAreaShapeCommand}" Header="Добавить область" />
+                <MenuItem Command="{Binding FinishDrawingShapeCommand}" Header="Закончить рисовать область" />
+                <MenuItem Command="{Binding DeleteAreaShapeCommand}" Header="Удалить область" />
                 <!--  Another context menu item to enable/disable editing?  -->
             </ContextMenu>
         </Viewbox.ContextMenu>
@@ -25,6 +25,7 @@
             Name="AreasCanvas"
             Width="1000"
             Height="1000"
+            x:FieldModifier="public"
             ClipToBounds="True"
             IsEnabled="True"
             MouseLeftButtonUp="AreasCanvas_MouseLeftButtonUp"
