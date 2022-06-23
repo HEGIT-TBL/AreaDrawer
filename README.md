@@ -1,3 +1,6 @@
+# NuGet packages
+https://www.nuget.org/packages/HEGIT.AreaDrawer.RU/
+https://www.nuget.org/packages/HEGIT.AreaDrawer.EN/
 # Usage example
 ```
 <Page
