@@ -1,0 +1,37 @@
+﻿<UserControl
+    x:Class="AreaDrawer.AreaDrawer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:areadrawerusercontrol="clr-namespace:AreaDrawer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance Type=areadrawerusercontrol:AreaDrawer}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ShapeStyles.xaml" />
+    </UserControl.Resources>
+    <Viewbox Stretch="{Binding Stretch}">
+        <Viewbox.ContextMenu>
+            <ContextMenu Name="ContextMenu">
+                <MenuItem Command="{Binding AddAreaShapeCommand}" Header="Add an area" />
+                <MenuItem Command="{Binding FinishDrawingShapeCommand}" Header="Stop drawing an area" />
+                <MenuItem Command="{Binding DeleteAreaShapeCommand}" Header="Delete selected area" />
+                <!--  Another context menu item to enable/disable editing?  -->
+            </ContextMenu>
+        </Viewbox.ContextMenu>
+        <Canvas
+            Name="AreasCanvas"
+            Width="1000"
+            Height="1000"
+            ClipToBounds="True"
+            IsEnabled="True"
+            MouseLeftButtonUp="AreasCanvas_MouseLeftButtonUp"
+            MouseMove="AreasCanvas_MouseMove">
+            <Canvas.Background>
+                <SolidColorBrush Opacity="0" Color="White" />
+            </Canvas.Background>
+        </Canvas>
+    </Viewbox>
+</UserControl>
